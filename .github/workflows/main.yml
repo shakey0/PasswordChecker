@@ -26,6 +26,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install pipenv
           pipenv install --dev
+          pip install pytest-xprocess
+          pip install playwright
+          playwright install
       
       # Now we run our tests
       - name: Test with pytest
