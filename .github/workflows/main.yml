@@ -30,6 +30,7 @@ jobs:
           pip install playwright
           pipenv install playwright
           playwright install
+          pipenv install pytest-playwright
       
       # Now we run our tests
       - name: Test with pytest
