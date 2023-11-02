@@ -24,7 +24,7 @@ In the following order:
 
 ## CI/CD Pipeline
 
-I have included a CI/CD pipeline in this project so that when the code is pushed to Github the tests will run and the code will be deployed to https://exoframe.xf.mkrs.link . This should then be accessible at https://andrewshakespeare-simple.xf.mkrs.link .
+I have included a CI/CD pipeline in this project so that when the code is pushed to Github the tests will run and the code will be deployed to https://exoframe.xf.mkrs.link . However, my Exoframe token from Makers is no longer valid, and so the pipeline will fail in the CD part.
 
 ## Installation & Setup
 
