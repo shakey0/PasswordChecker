@@ -1,23 +1,64 @@
-# Simple Server
+# Password Checker
 
-This is a simple web server that serves a single route.
+## Introduction
 
-To set up this project.
+During week 7 of the Makers Academy bootcamp, I developed an intricate password checker as a day-long project. This utility enforces 9 rigorous validation steps to ensure password strength. The accompanying Dockerfile ensures smooth containerization for easy deployment and scaling.
 
+## Features
+
+In the following order:
+- Checks if the password is at least 20 characters long
+- Checks if the password contains nummbers
+- Checks if the password contains symbols
+- Checks if the password contains both uppercase and lowercase characters
+- Checks if the password contains an animal (from an extensive list of animals)
+- Checks if all the digits in the password add up to at least 60
+- Checks if the password contains a word to start a question (from a list of words)
+- Checks that any consecutive digits don't add to more than 16
+- Checks if the password contains the first name of an English monarch (from a list of English monarchs)
+
+## Key Technologies
+
+- **Backend:** Python, Flask, Docker
+- **Testing:** Playwright
+
+## Installation & Setup
+
+Run the following command to clone the repo:
 ```bash
-; pipenv install
-; pipenv shell
-; pytest           # Run the tests
-; python app.py    # Run the server
+git clone https://github.com/shakey0/PasswordChecker
+cd PasswordChecker
 ```
 
+Create your virtual environment:
+```bash
+pipenv install
+pipenv shell
+```
 
-<!-- BEGIN GENERATED SECTION DO NOT EDIT -->
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
----
+Run the tests:
+```bash
+pytest
+```
 
-**How was this resource?**  
-[😫](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fcloud-deployment&prefill_File=codebases%2Fsimple_server%2FREADME.md&prefill_Sentiment=😫) [😕](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fcloud-deployment&prefill_File=codebases%2Fsimple_server%2FREADME.md&prefill_Sentiment=😕) [😐](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fcloud-deployment&prefill_File=codebases%2Fsimple_server%2FREADME.md&prefill_Sentiment=😐) [🙂](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fcloud-deployment&prefill_File=codebases%2Fsimple_server%2FREADME.md&prefill_Sentiment=🙂) [😀](https://airtable.com/shrUJ3t7KLMqVRFKR?prefill_Repository=makersacademy%2Fcloud-deployment&prefill_File=codebases%2Fsimple_server%2FREADME.md&prefill_Sentiment=😀)  
-Click an emoji to tell us.
+Start the server:
+```bash
+python app.py
+```
 
-<!-- END GENERATED SECTION DO NOT EDIT -->
+### Run with Docker
+
+Build a Docker image (image name optional):
+```bash
+docker build -t password_checker .
+```
+
+Start the Docker container:
+```bash
+docker run -p 5000:5000 password_checker
+```

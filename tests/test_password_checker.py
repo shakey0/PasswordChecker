@@ -45,8 +45,8 @@ def test_numbers_add_to_60():
     assert checker.check("i&^*rakjbajfoiua234jhksss") == "Password must contain uppercase and lowercase characters."
     assert checker.check("KJGASOFUB&*^(18234726187)HH") == "Password must contain uppercase and lowercase characters."
     assert checker.check("KOFUB&*^(18234726187)asfkgh") == "Password must contain an animal."
-    assert checker.check("KOFUB&*^(1823lIoN187)asfkgh") == "Password must contain digits that add up to 60."
-    assert checker.check("KOFUB&*^(9999lIoN999)asfkgh") != "Password must contain digits that add up to 60."
+    assert checker.check("KOFUB&*^(1823lIoN187)asfkgh") == "Password must contain digits that add up to at least 60."
+    assert checker.check("KOFUB&*^(9999lIoN999)asfkgh") != "Password must contain digits that add up to at least 60."
 
 def test_question_start_word():
     checker = PasswordChecker()
@@ -56,7 +56,7 @@ def test_question_start_word():
     assert checker.check("i&^*rakjbajfoiua234jhksss") == "Password must contain uppercase and lowercase characters."
     assert checker.check("KJGASOFUB&*^(18234726187)HH") == "Password must contain uppercase and lowercase characters."
     assert checker.check("KOFUB&*^(18234726187)asfkgh") == "Password must contain an animal."
-    assert checker.check("KOFUB&*^(1823lIoN187)asfkgh") == "Password must contain digits that add up to 60."
+    assert checker.check("KOFUB&*^(1823lIoN187)asfkgh") == "Password must contain digits that add up to at least 60."
     assert checker.check("KOFUB&*^(9999lIoN999)asfkgh") == "Password must contain a word to start a question."
     assert checker.check("KOFUB&*^(9999lIoN999)Whengh") != "Password must contain a word to start a question."
 
@@ -68,7 +68,7 @@ def test_nums_16_or_less():
     assert checker.check("i&^*rakjbajfoiua234jhksss") == "Password must contain uppercase and lowercase characters."
     assert checker.check("KJGASOFUB&*^(18234726187)HH") == "Password must contain uppercase and lowercase characters."
     assert checker.check("KOFUB&*^(18234726187)asfkgh") == "Password must contain an animal."
-    assert checker.check("KOFUB&*^(1823lIoN187)asfkgh") == "Password must contain digits that add up to 60."
+    assert checker.check("KOFUB&*^(1823lIoN187)asfkgh") == "Password must contain digits that add up to at least 60."
     assert checker.check("KOFUB&*^(9999lIoN999)asfkgh") == "Password must contain a word to start a question."
     assert checker.check("KOFUB&*^(9999lIoN999)Whengh") == "Password must not contain consecutive digits adding to more than 16."
     assert checker.check("9KOFU77g9&*^(9lIoN77)When9n77") != "Password must not contain consecutive digits adding to more than 16."
@@ -81,7 +81,7 @@ def test_has_english_monarch():
     assert checker.check("i&^*rakjbajfoiua234jhksss") == "Password must contain uppercase and lowercase characters."
     assert checker.check("KJGASOFUB&*^(18234726187)HH") == "Password must contain uppercase and lowercase characters."
     assert checker.check("KOFUB&*^(18234726187)asfkgh") == "Password must contain an animal."
-    assert checker.check("KOFUB&*^(1823lIoN187)asfkgh") == "Password must contain digits that add up to 60."
+    assert checker.check("KOFUB&*^(1823lIoN187)asfkgh") == "Password must contain digits that add up to at least 60."
     assert checker.check("KOFUB&*^(9999lIoN999)asfkgh") == "Password must contain a word to start a question."
     assert checker.check("KOFUB&*^(9999lIoN999)Whengh") == "Password must not contain consecutive digits adding to more than 16."
     assert checker.check("9KOFU77g9&*^(9lIoN77)When9n77") == "Password must contain the first name of an English monarch."
