@@ -22,6 +22,10 @@ In the following order:
 - **Backend:** Python, Flask, Docker
 - **Testing:** Playwright
 
+## CI/CD Pipeline
+
+I have included a CI/CD pipeline in this project so that when the code is pushed to Github the tests will run and the code will be deployed to https://exoframe.xf.mkrs.link . This should then be accessible at https://andrewshakespeare-simple.xf.mkrs.link .
+
 ## Installation & Setup
 
 Run the following command to clone the repo:
