@@ -20,6 +20,7 @@ In the following order:
 ## Key Technologies
 
 - **Backend:** Python, Flask, Docker
+- **Frontend:** CSS, HTML
 - **Testing:** Playwright
 
 ## CI/CD Pipeline
