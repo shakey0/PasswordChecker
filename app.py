@@ -11,8 +11,10 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/check', methods=['POST'])
+@app.route('/check', methods=['GET', 'POST'])
 def check():
+    if request.method == 'GET':  # This is to stop the bad response in case the user refreshes the page
+        return render_template('index.html')
     checker = PasswordChecker()
     password = format(escape(request.form.get('password')))
     is_valid = checker.check(password)
