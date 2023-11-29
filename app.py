@@ -1,8 +1,11 @@
+from dotenv import load_dotenv
+load_dotenv()
 import os
 from flask import Flask, request, render_template, escape
 from lib.password_checker import PasswordChecker
 
 app = Flask(__name__)
+app.secret_key = os.environ.get('SECRET_KEY')
 app.jinja_env.autoescape = True
 
 
@@ -21,9 +24,17 @@ def check():
     return render_template('result.html', password=password, is_valid=is_valid)
     
 
+production = os.environ.get('PRODUCTION', False)
 if __name__ == '__main__':
-    app.run(
-        debug=True,
-        host="0.0.0.0", # Listen for connections _to_ any server
-        port=int(os.environ.get('PORT', 5000))
-    )
+    if production:
+        app.run(
+            host="0.0.0.0",
+            debug=False,
+            port=int(os.environ.get('PORT', 5000))
+        )
+    else:
+        app.run(
+            host="0.0.0.0",
+            debug=True,
+            port=int(os.environ.get('PORT', 5000))
+        )

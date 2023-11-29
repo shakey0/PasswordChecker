@@ -1,5 +1,7 @@
 # Password Checker
 
+
+
 ## Introduction
 
 During week 7 of the Makers Academy bootcamp, I developed an intricate password checker as a day-long project. This utility enforces 9 rigorous validation steps to ensure password strength. The accompanying Dockerfile ensures smooth containerization for easy deployment and scaling.
@@ -17,11 +19,22 @@ In the following order:
 - Checks that any consecutive digits don't add to more than 16
 - Checks if the password contains the first name of an English monarch (from a list of English monarchs)
 
+- See [password_checker.py](https://github.com/shakey0/PasswordChecker/blob/main/lib/password_checker.py) for the code to check the password.
+
+## Deployment & CI/CD Pipeline Process
+
+1. Used Docker to containerise the app on my local machine.
+    - [See Dockerfile](https://github.com/shakey0/PasswordChecker/blob/main/Dockerfile)
+2. Created a script - main.yml - to build and test the app in GitHub Actions.
+3. Created a new web service in Render.
+4. Configured GitHub to give Render the necessary permissions on this repository, so each time a new push is made to the main branch, and the tests pass, the latest version of the app will be deployed to Render.
+
 ## Key Technologies
 
-- **Backend:** Python, Flask, Docker
+- **Backend:** Python, Flask
 - **Frontend:** CSS, HTML
-- **Testing:** Playwright
+- **Testing:** Pytest, Playwright
+- **Deployment:** Docker, GitHub Actions, Render
 
 ## CI/CD Pipeline
 
@@ -58,12 +71,12 @@ python app.py
 
 ### Run with Docker
 
-Build a Docker image (image name optional):
+Build a Docker image (image tag optional):
 ```bash
 docker build -t password_checker .
 ```
 
 Start the Docker container:
 ```bash
-docker run -p 5000:5000 password_checker
+docker run -e PRODUCTION=True -p 5000:5000 password_checker
 ```

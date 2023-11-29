@@ -19,6 +19,7 @@ pytest==7.4.0
 pytest-base-url==2.0.0
 pytest-playwright==0.4.2
 pytest-xprocess==0.22.2
+python-dotenv==1.0.0
 python-slugify==8.0.1
 requests==2.31.0
 text-unidecode==1.3
