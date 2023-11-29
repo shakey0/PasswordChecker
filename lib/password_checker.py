@@ -6,7 +6,7 @@ class PasswordChecker():
             return "Password must be at least 20 characters."
         elif len([char for char in password if char.isnumeric()]) == 0:
             return "Password must contain numbers."
-        elif not re.search(r'[!@#$%^&*(),.?":{}|<>]', password):
+        elif not re.search(r'[!@#$%^&*(),.?":{}|<>£€¥₹₽₣₢¢₦₡₧₪₸₫₩₭₮₯₶₲₴₺₥₰₠₣₤₧₨₩₪₫₭₮₯₰₠₡₢₣₤₥₦₧₨₩₪₫₭₮₯₶₷₸₹₺₻₼₽₾₿]', password):
             return "Password must contain symbols."
         elif len([char for char in password if char.isupper()]) == 0 or \
             len([char for char in password if char.islower()]) == 0:
