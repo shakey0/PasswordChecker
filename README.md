@@ -59,6 +59,11 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+Create a .env file with the following:
+```bash
+SECRET_KEY=a_secret_key
+```
+
 Run the tests:
 ```bash
 pytest
@@ -78,5 +83,5 @@ docker build -t password_checker .
 
 Start the Docker container:
 ```bash
-docker run -e PRODUCTION=True -p 5000:5000 password_checker
+docker run -e PRODUCTION=True -e SECRET_KEY=a_secret_key -p 5000:5000 password_checker
 ```
