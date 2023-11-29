@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 load_dotenv()
 import os
-from flask import Flask, request, render_template, escape
+from flask import Flask, request, render_template
 from lib.password_checker import PasswordChecker
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ def check():
     if request.method == 'GET':  # This is to stop the bad response in case the user refreshes the page
         return render_template('index.html')
     checker = PasswordChecker()
-    password = format(escape(request.form.get('password')))
+    password = request.form.get('password')
     is_valid = checker.check(password)
     return render_template('result.html', password=password, is_valid=is_valid)
     

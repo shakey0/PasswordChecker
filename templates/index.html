@@ -38,6 +38,7 @@
             font-family: 'Major Mono Display', monospace;
             font-size: 3em;
             margin-bottom: 20px;
+            padding: 0px 20px;
         }
 
         form {
@@ -57,7 +58,6 @@
 
         input {
             width: 95.5%;
-            padding: 10px;
             border: none;
             border-radius: 5px;
             margin-bottom: 20px;
@@ -68,8 +68,14 @@
             transition: box-shadow 0.3s ease;
         }
 
+        input[type="text"] {
+            padding: 10px;
+        }
+
         input[type="submit"] {
             cursor: pointer;
+            font-family: 'Teko', sans-serif;
+            font-size: 1.7em;
             background-color: #0077FF;
             color: #000;
             border: none;
@@ -88,18 +94,9 @@
         }
 
         /* Mobile optimization */
-        @media only screen and (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-
-            .t-title {
-                font-size: 2em;
-                margin-bottom: 10px;
-            }
-
+        @media (max-width: 600px) {
             form {
-                padding: 10px 20px;
+                width: 75%;
             }
         }
     </style>
